@@ -3,11 +3,11 @@ package com.weaver;
 public class Cell {
     private int cellCurrentValue;
     // Memento
-    private int previousCellValue;
+    private int cellPreviousValue;
 
     public Cell(int cellCurrentValue){
         this.cellCurrentValue = validate(cellCurrentValue);
-        this.previousCellValue = validate(cellCurrentValue);
+        this.cellPreviousValue = validate(cellCurrentValue);
     }
 
     public int getCellCurrentValue(){
@@ -18,12 +18,12 @@ public class Cell {
         this.cellCurrentValue = validate(cellCurrentValue);
     }
 
-    public int getPreviousCellValue(){
-        return previousCellValue;
+    public int getCellPreviousValue(){
+        return cellPreviousValue;
     }
 
-    public void setPreviousCellValue(int previousCellValue){
-        this.previousCellValue = validate(previousCellValue);
+    public void setCellPreviousValue(int cellPreviousValue){
+        this.cellPreviousValue = validate(cellPreviousValue);
     }
 
     // simple validator to keep constructor clean

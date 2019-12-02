@@ -9,13 +9,13 @@ public class StrategyTest {
         // setup
         Strategy patient = new Strategy();
         Universe universe = getTestUniverseWith(0);
-        universe.getCell(1,1).setPreviousCellValue(0);
+        universe.getCell(1,1).setCellPreviousValue(0);
         universe.getCell(1,1).setCellCurrentValue(1);
 
         // test and validate
-        Assert.assertEquals(0, universe.getCell(1,1).getPreviousCellValue());
+        Assert.assertEquals(0, universe.getCell(1,1).getCellPreviousValue());
         patient.setMemento(universe);
-        Assert.assertEquals(1, universe.getCell(1,1).getPreviousCellValue());
+        Assert.assertEquals(1, universe.getCell(1,1).getCellPreviousValue());
     }
 
     @org.junit.Test

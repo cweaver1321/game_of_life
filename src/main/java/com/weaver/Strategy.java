@@ -10,7 +10,7 @@ public class Strategy {
                 cell = universe.getCell(i,j);
                 int neighbors = getNeighbors(i,j,universe);
                 // using the cell value memento set the cell value
-                cellValue = findNewCellValue(cell.getPreviousCellValue(), neighbors);
+                cellValue = findNewCellValue(cell.getCellPreviousValue(), neighbors);
                 cell.setCellCurrentValue(cellValue);
             }
         }
@@ -23,7 +23,7 @@ public class Strategy {
         for(int i = 1; i < universe.getRows() - 1; i++){
             for(int j = 1; j < universe.getColumns() - 1; j++){
                 cell = universe.getCell(i,j);
-                cell.setPreviousCellValue(cell.getCellCurrentValue());
+                cell.setCellPreviousValue(cell.getCellCurrentValue());
             }
         }
     }
@@ -34,7 +34,7 @@ public class Strategy {
             for (int j = column - 1; j <= column + 1; j++) {
                 if (i != row || j != column) {
                     // get previous as we are updating the current cell value
-                    counter = counter + universe.getCell(i, j).getPreviousCellValue();
+                    counter = counter + universe.getCell(i, j).getCellPreviousValue();
                 }
             }
         }
